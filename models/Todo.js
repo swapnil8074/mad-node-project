@@ -4,10 +4,11 @@ const sequelize = require('../config/db');
 const Todo = sequelize.define('todos', {
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true,
     },
     title: Sequelize.STRING(256),
-    date: Sequelize.DATE,
+    date: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
     deleted_at: Sequelize.DATE,
 })
 

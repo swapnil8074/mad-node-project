@@ -12,13 +12,22 @@ module.exports.index = (req, res) => {
 }
 
 
-module.exports.save = (req, res) => {
+module.exports.save = async (req, res) => {
 
     let title = req.body.title;
-
-
-
-    console.log(req.body);
-
+    
+    /* 
+    //  Using pormises
+    Todo.create({title: title }).then((todo)=>{
+        res.redirect('/todo');
+    }).catch(function(err){
+        console.log(err);
+    }) */
+    
+    let todo = await Todo.create({title: title });
     res.redirect('/todo');
+
+
 }
+
+
