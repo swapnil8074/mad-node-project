@@ -6,16 +6,22 @@ todo home page
 request type  :  GET
 */
 
-module.exports.index = (req, res) => {
+module.exports.index = async (req, res) => {
 
-    res.render('todo/index');
+    let todos = await Todo.findAll({
+        attributes: ['id', 'title'] // to get only selected columns
+    });
+
+    res.render('todo/index', {
+        todos: todos
+    });
 }
 
 
 module.exports.save = async (req, res) => {
 
     let title = req.body.title;
-    
+
     /* 
     //  Using pormises
     Todo.create({title: title }).then((todo)=>{
@@ -23,11 +29,11 @@ module.exports.save = async (req, res) => {
     }).catch(function(err){
         console.log(err);
     }) */
-    
-    let todo = await Todo.create({title: title });
+
+    let todo = await Todo.create({
+        title: title
+    });
     res.redirect('/todo');
 
 
 }
-
-

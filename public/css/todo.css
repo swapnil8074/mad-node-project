@@ -4,20 +4,40 @@
     box-sizing: border-box
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
 body {
     font-family: 'Roboto', sans-serif;
 }
 
 .todo-container {
-    width: 60%;
-    background: #cacaca;
+    width: 600px;
+    border: 1px solid #F57C00;
     margin: 0 auto;
     height: 90vh;
 }
 
 .form-container {
     text-align: center;
-    margin: 20px 0 50px 0;
+    margin: 0 0 50px 0;
     padding: 20px;
     background-color: #F57C00;
     color: #fff;
@@ -45,4 +65,24 @@ body {
     font-size: 16px;
     border-radius: 6px;
     outline: none;
+}
+
+.todo-list {
+    margin: 0 10px;
+}
+
+ul.todos {
+    list-style: none;
+    font-size: 28px;
+    height: 580px;
+    color: #F57C00;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+ul.todos li {
+    border: 1px solid #efefef;
+    padding: 21px 20px;
+    margin: 0 0 5px 0;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -24,7 +24,9 @@
         <div class="todo-list">
 
             <ul class="todos">
-                <li>Task 1</li>
+              <%  todos.length && todos.forEach(todo=>{ %>
+                <li><%= todo.title%></li>
+              <% }) %>
             </ul>
 
         </div>
