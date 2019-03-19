@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/todo.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Todo App</title>
+</head>
+
+<body>
+
+    <div class="todo-container">
+        <div class="form-container">
+            <h1>Todo Manager</h1>
+            <form action="/todo/save" method="POST">
+                <input type="text" id="title" name="title">
+                <button type="submit">Add Todo</button>
+
+            </form>
+        </div>
+        <div class="todo-list">
+
+            <ul class="todos">
+                <li>Task 1</li>
+            </ul>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

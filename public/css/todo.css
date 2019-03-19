@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.todo-container {
+    width: 60%;
+    background: #cacaca;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.form-container {
+    text-align: center;
+    margin: 20px 0 50px 0;
+    padding: 20px;
+    background-color: #F57C00;
+    color: #fff;
+
+}
+
+.form-container form {
+    margin: 20px 0px 30px 0px;
+}
+
+.form-container form input {
+    padding: 12px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    border-radius: 14px;
+    width: 70%;
+    outline: none;
+}
+
+.form-container form button {
+    padding: 15px;
+    margin-left: 20px;
+    background: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    outline: none;
+}
