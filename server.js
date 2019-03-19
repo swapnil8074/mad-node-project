@@ -36,6 +36,10 @@ const todoRoutes = require("./routes/todo");
 
 app.use("/todo", todoRoutes);
 
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
 app.listen(3000, function() {
   console.log(`Server listening on port 3000`);
 });
