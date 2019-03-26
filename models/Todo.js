@@ -9,7 +9,7 @@ const Todo = sequelize.define('todos', {
     },
     title: Sequelize.STRING(256),
     date: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
-    deleted_at: Sequelize.DATE,
+    deletedAt: Sequelize.DATE,
 })
 
 
