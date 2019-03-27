@@ -76,6 +76,18 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+app.get("/cookies", (req, res) => {
+
+// res.setHeader('Set-Cookie', "isAuth=false; httpOnly; MaxAge=30: Expires");
+let cookies = req.headers.cookie;
+// (req.headers.cookie.split(";"))[2].trim().split("=")[1]
+console.log(req.headers.cookie);
+
+res.send("HEllo");
+});
+
+
+
 app.listen(3000, function() {
   console.log(`Server listening on port 3000`);
 });
