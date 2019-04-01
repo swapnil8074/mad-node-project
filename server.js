@@ -20,14 +20,14 @@ app.use(
   })
 );
 
-app.use(function(req, res, next) {
-  req.user = {
-    _id: 214324325,
-    name: "Swapnil Shukla"
-  };
+// app.use(function(req, res, next) {
+//   req.user = {
+//     _id: 214324325,
+//     name: "Swapnil Shukla"
+//   };
 
-  next();
-});
+//   next();
+// });
 // app.use(cookieParser());
 
 // sessions :  by default session gets stored in the memory and it is really a horrible idea to store session in memory on production.
@@ -76,16 +76,15 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
-app.get("/cookies", (req, res) => {
+// app.get("/cookies", (req, res) => {
 
-// res.setHeader('Set-Cookie', "isAuth=false; httpOnly; MaxAge=30: Expires");
-let cookies = req.headers.cookie;
-// (req.headers.cookie.split(";"))[2].trim().split("=")[1]
-console.log(req.headers.cookie);
+// // res.setHeader('Set-Cookie', "isAuth=false; httpOnly; MaxAge=30: Expires");
+// let cookies = req.headers.cookie;
+// // (req.headers.cookie.split(";"))[2].trim().split("=")[1]
+// console.log(req.headers.cookie);
 
-res.send("HEllo");
-});
-
+// res.send("HEllo");
+// });
 
 
 app.listen(3000, function() {
