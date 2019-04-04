@@ -1,13 +1,17 @@
-<% include('../includes/head.js') %>
+<% include('../includes/head') %>
 
+<% if(error){ %>
+<div class ="alert alert-error"><%= error%> </div>
+<% } %>
 <div class="col-md-12">
-  <form action="/login" method="POST">
+  <form action="/auth/signup" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
     <input type="text" name="email" />
     <input type="password" name="password" />
-    <input type="password" name="confirmPassword" />
+    <%# <input type="password" name="confirmPassword" /> %>
     <input type="submit" value="Sign up" />
     
   </form>
 </div>
 
-<% include('../includes/footer.js') %>
+<% include('../includes/footer') %>
