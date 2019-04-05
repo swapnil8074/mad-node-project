@@ -11,7 +11,9 @@ const User = sequelize.define('users', {
     name: Sequelize.STRING(255),
     email: Sequelize.STRING(255),    
     password: Sequelize.STRING(255),
-    profile_pic: Sequelize.STRING(255),
+    resetToken: Sequelize.STRING(255),
+    resetTime: Sequelize.DATE,
+    profilePic: Sequelize.STRING(255),
     joiningDate: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
     deletedAt: Sequelize.DATE,
 })

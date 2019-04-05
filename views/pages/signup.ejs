@@ -4,11 +4,12 @@
 <div class ="alert alert-error"><%= error%> </div>
 <% } %>
 <div class="col-md-12">
-  <form action="/auth/signup" method="POST">
+  <form action="/auth/signup" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
     <input type="text" name="email" />
     <input type="password" name="password" />
-    <%# <input type="password" name="confirmPassword" /> %>
+    <label> Profile Pic </label>
+    <input type="file" name="profilePic" />
     <input type="submit" value="Sign up" />
     
   </form>

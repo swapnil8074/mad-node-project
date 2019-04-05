@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const sequelize = require("./config/db");
+var multer  = require('multer');
 
 // add these packages to get on
 const csrf = require('csurf');
@@ -9,10 +10,14 @@ const session = require("express-session");
 const flash = require('connect-flash');
 // const cookieParser = require("cookie-parser");
 
+
+
 const app = express();
 
 // to serve static files
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "upload")));
+
 
 
 const authMiddleware =  require('./middlewares/authMiddleware');
@@ -25,6 +30,9 @@ app.use(
   })
 );
 
+// multer
+upload = multer({ dest: 'uploads/' })
+
 // sessions :  by default session gets stored in the memory and it is really a horrible idea to store session in memory on production.
 app.use(
   session({
@@ -36,8 +44,8 @@ app.use(
   })
 );
 
-const csrfProtection =  csrf();
-app.use(csrfProtection);
+// const csrfProtection =  csrf();
+// app.use(csrfProtection);
 app.use(flash());
 
 // app.use(authMiddleware);
@@ -71,9 +79,12 @@ app.use("/todo",authMiddleware, todoRoutes);
 app.use("/auth", authRoutes);
 
 app.get("/", authMiddleware, (req, res) => {
-
   res.render("index.ejs");
 });
+
+app.get('/generateCSRF',(req,res)=>{
+  console.log(req.csrfToken());
+})
 
 app.listen(3000, function() {
   console.log(`Server listening on port 3000`);
