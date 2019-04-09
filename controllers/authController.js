@@ -4,7 +4,7 @@ const crypto = require("crypto");
 
 module.exports.getSignup = (req, res) => {
   let data = {};
-  data.csrfToken = req.csrfToken();
+  // data.csrfToken = req.csrfToken();
   data.error = req.flash("error");
   res.render("pages/signup", data);
 };
@@ -17,7 +17,7 @@ module.exports.getLogin = (req, res) => {
 
 module.exports.postSignup = async (req, res) => {
   const body = req.body;
-  // return console.log(body);
+  // return console.log(req.file);
   if (!body.email || !body.password) {
     req.flash("error", "Email or Password can not be empty!");
     return res.redirect("/auth/signup");

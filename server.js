@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const sequelize = require("./config/db");
-var multer  = require('multer');
+
 
 // add these packages to get on
 const csrf = require('csurf');
@@ -30,14 +30,13 @@ app.use(
   })
 );
 
-// multer
-upload = multer({ dest: 'uploads/' })
+
 
 // sessions :  by default session gets stored in the memory and it is really a horrible idea to store session in memory on production.
 app.use(
   session({
     secret: "thisIsSecretForEncrption", //for signing hash which secretl stores our id to session
-    secret: "keyboard cat",
+    // secret: "keyboard cat",
     resave: false,
     saveUninitialized: true,
     cookie: { /* secure: true  */ }
